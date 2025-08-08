@@ -1,5 +1,6 @@
 import os
 
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
 from getpass import getpass
@@ -25,17 +26,14 @@ llm = HuggingFaceEndpoint(
 
 model = ChatHuggingFace(llm=llm)
 
-chat_history = []
-chat_history2 = []
+chat_history = [SystemMessage("Welcome to Llama 4 model")]
 
 while True:
     user_input = input('You: ')
-    chat_history.append(user_input)
+    chat_history.append(HumanMessage(user_input))
     if user_input.lower() == 'exit':
         break
     result = model.invoke(chat_history)
-    chat_history.append(result.content)
+    chat_history.append(AIMessage(result.content))
 
     print("AI: ",result.content)
-
-    chat_history2.append({"prompt": user_input, "result": result.content})
