@@ -17,6 +17,7 @@ google-generativeai
 langchain-huggingface
 transformers
 huggingface-hub
+huggingface_hub[hf_xet]
 
 # Environment Variable Management
 python-dotenv
@@ -35,3 +36,7 @@ sentence-transformers
 
 # Library for UI
 streamlit
+
+# validation lib
+pydantic
+pydantic[email,timezone] 
