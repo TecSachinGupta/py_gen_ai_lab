@@ -17,8 +17,23 @@ if not HUGGINGFACEHUB_API_TOKEN:
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
 
 llm = HuggingFacePipeline.from_model_id(
-    model_id="google/gemma-3-1b-it",
+    model_id="Qwen/Qwen3-0.6B",
     task="text-generation"
 )
 
 model = ChatHuggingFace(llm=llm)
+
+prompt = PromptTemplate(
+    template='Generate 5 interesting facts about {topic}',
+    input_variables=['topic']
+)
+
+parser = StrOutputParser()
+
+chain = prompt | model | parser
+
+result = chain.invoke({'topic':'cricket'})
+
+print(result)
+
+chain.get_graph().print_ascii()
