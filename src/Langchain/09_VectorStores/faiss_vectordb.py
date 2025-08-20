@@ -64,10 +64,10 @@ print(docIds)
 print("=" * TERMINAL_WIDTH)
 
 # view documents
-allDocs = vector_store.get(include=['embeddings','documents', 'metadatas'])
+# allDocs = vector_store.get(include=['embeddings','documents', 'metadatas'])
 
-print((" " * ((TERMINAL_WIDTH // 2) - 1)) + "All Docs")
-print(allDocs)
+print(("=" * ((TERMINAL_WIDTH // 2) - 10)) + "All Docs")
+print(vector_store)
 print("=" * TERMINAL_WIDTH)
 
 # search documents
@@ -106,21 +106,21 @@ updated_doc1 = Document(
     metadata={"team": "Royal Challengers Bangalore"}
 )
 
-vector_store.update_document(document_id='09a39dc6-3ba6-4ea7-927e-fdda591da5e4', document=updated_doc1)
+# vector_store.update_document(document_id='09a39dc6-3ba6-4ea7-927e-fdda591da5e4', document=updated_doc1)
 
 # view documents
-allDocs = vector_store.get(include=['embeddings','documents', 'metadatas'])
+# allDocs = vector_store.get(include=['embeddings','documents', 'metadatas'])
 
-print((" " * ((TERMINAL_WIDTH // 2) - 1)) + "All Docs after update")
-print(allDocs)
+# print((" " * ((TERMINAL_WIDTH // 2) - 1)) + "All Docs after update")
+# print(vector_store)
 print("=" * TERMINAL_WIDTH)
 
 # delete document
 vector_store.delete(ids=['09a39dc6-3ba6-4ea7-927e-fdda591da5e4'])
 
 # view documents
-allDocs = vector_store.get(include=['embeddings','documents', 'metadatas'])
+# allDocs = vector_store.get(include=['embeddings','documents', 'metadatas'])
 
 print((" " * ((TERMINAL_WIDTH // 2) - 1)) + "All Docs aftern delete")
-print(allDocs)
+print(vector_store)
 print("=" * TERMINAL_WIDTH)
