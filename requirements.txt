@@ -42,3 +42,7 @@ streamlit
 # validation lib
 pydantic
 pydantic[email,timezone] 
+
+# vector db
+chromadb
+faiss
