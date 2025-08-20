@@ -1,10 +1,14 @@
 import os
 
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
 from getpass import getpass
 
 load_dotenv()
+
+terminal_width = os.get_terminal_size().columns
 
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
@@ -23,3 +27,10 @@ llm = HuggingFaceEndpoint(
 )
 
 model = ChatHuggingFace(llm=llm)
+
+parser = StrOutputParser()
+
+prompt = PromptTemplate(
+    template='Write a summary for the following poem - \n {poem}',
+    input_variables=['poem']
+)
