@@ -45,4 +45,7 @@ pydantic[email,timezone]
 
 # vector db
 chromadb
-faiss
+faiss-cpu
+
+# misc
+wikipedia
