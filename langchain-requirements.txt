@@ -1,0 +1,23 @@
+# LangChain Core
+langchain
+langchain-core
+langchain-community
+
+# Hugging Face Integration
+langchain-huggingface
+transformers
+huggingface-hub
+huggingface_hub[hf_xet]
+grandalf
+
+# Environment Variable Management
+python-dotenv
+
+
+# Other libraries required for models execution
+torch
+sentence-transformers
+
+# validation lib
+pydantic
+pydantic[email,timezone] 

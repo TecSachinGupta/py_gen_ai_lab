@@ -1,0 +1,24 @@
+# -r langchain-requirement.txt
+
+# Environment Variable Management
+python-dotenv
+
+# library to enable jyupter kernal
+ipykernel
+
+# langchain
+langchain
+langchain_openai
+langchain-community
+
+# langgraph
+langgraph
+
+# to draw graphs
+grandalf
+
+# to design chat ui
+streamlit
+
+#persist in db
+langgraph-checkpoint-sqlite
