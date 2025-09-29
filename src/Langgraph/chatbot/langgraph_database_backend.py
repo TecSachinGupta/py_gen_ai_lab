@@ -9,7 +9,7 @@ import sqlite3
 
 load_dotenv()
 
-llm = ChatOpenAI()
+llm = ChatOpenAI(model="gpt-5-mini")
 
 class ChatState(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]

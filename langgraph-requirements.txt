@@ -22,3 +22,5 @@ streamlit
 
 #persist in db
 langgraph-checkpoint-sqlite
+
+# pip install -U ddgs
